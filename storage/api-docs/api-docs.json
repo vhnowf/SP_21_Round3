@@ -1,0 +1,517 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Aftersales Api - SP21",
+        "description": "List Aftersales Api",
+        "version": "1.0"
+    },
+    "paths": {
+        "/feedbacks": {
+            "get": {
+                "tags": [
+                    "Feedback"
+                ],
+                "summary": "Show list feedbacks",
+                "operationId": "06ef48a76c0e8cc754a917b101dd574d",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "rows": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number",
+                                                        "example": 1
+                                                    },
+                                                    "user_id": {
+                                                        "type": "number",
+                                                        "example": 2
+                                                    },
+                                                    "content": {
+                                                        "type": "string",
+                                                        "example": "example content"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "timestamp",
+                                                        "example": "2022-01-20T09:06:33.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "timestampl",
+                                                        "example": "2022-01-20T09:06:33.000000Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "API key is missing."
+                    }
+                }
+            }
+        },
+        "/feedbacks/{id}": {
+            "get": {
+                "tags": [
+                    "Feedback"
+                ],
+                "summary": "Show a feedback with certain $id",
+                "operationId": "6496919e6451e48076284d8703da18d4",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "user_id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "content": {
+                                            "type": "string",
+                                            "example": "content"
+                                        },
+                                        "created_at": {
+                                            "type": "timestamp",
+                                            "example": "2022-01-20T09:06:33.000000Z"
+                                        },
+                                        "updated_at": {
+                                            "type": "timestamp",
+                                            "example": "2022-01-20T09:06:33.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "API key is missing."
+                    }
+                }
+            }
+        },
+        "/product/{id}/comment": {
+            "get": {
+                "tags": [
+                    "Comment"
+                ],
+                "summary": "Show comments of the product has id = $id",
+                "operationId": "b08c071dda1c08be7121671ce10122a3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "comments": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number",
+                                                        "example": 1
+                                                    },
+                                                    "product_id": {
+                                                        "type": "number",
+                                                        "example": 1
+                                                    },
+                                                    "user_id": {
+                                                        "type": "number",
+                                                        "example": 2
+                                                    },
+                                                    "comment": {
+                                                        "type": "string",
+                                                        "example": "example comment"
+                                                    },
+                                                    "photo": {
+                                                        "type": "string",
+                                                        "example": "null"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "timestamp",
+                                                        "example": "2022-01-20T09:06:33.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "timestamp",
+                                                        "example": "2022-01-20T09:06:33.000000Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "API key is missing."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Comment"
+                ],
+                "summary": "Create a new comment",
+                "operationId": "69597642280b87ae1c0b4abb2b2db909",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "product_id",
+                                    "user_id",
+                                    "comment",
+                                    "photo"
+                                ],
+                                "properties": {
+                                    "product_id": {
+                                        "type": "int",
+                                        "example": "1"
+                                    },
+                                    "user_id": {
+                                        "type": "int",
+                                        "example": "1"
+                                    },
+                                    "comment": {
+                                        "type": "text",
+                                        "example": "Sản phẩm đẹp quá"
+                                    },
+                                    "photo": {
+                                        "type": "string",
+                                        "example": "null"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "Success": {
+                                            "type": "string",
+                                            "example": "Send a comment successfully"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/comment/{id}": {
+            "delete": {
+                "tags": [
+                    "Comment"
+                ],
+                "summary": "Delete a comment by comment's id",
+                "description": "Delete a comment",
+                "operationId": "9bdf98bdab49153f26c620e7e975ecab",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete a comment successfully"
+                    },
+                    "403": {
+                        "description": "API key is missing."
+                    }
+                }
+            }
+        },
+        "/feedback": {
+            "post": {
+                "tags": [
+                    "Feedback"
+                ],
+                "summary": "Create Feedback",
+                "operationId": "caf6291a5737e74d76b9314188012091",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "user_id",
+                                    "content"
+                                ],
+                                "properties": {
+                                    "user_id": {
+                                        "type": "number",
+                                        "example": "1"
+                                    },
+                                    "content": {
+                                        "type": "string",
+                                        "example": "Tôi rất hài lòng với dịch vụ chăm sóc khách hàng ở đây"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "Success": {
+                                            "type": "string",
+                                            "example": "Send a feedback successfully"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "API key is missing."
+                    }
+                }
+            }
+        },
+        "/insurance": {
+            "post": {
+                "tags": [
+                    "Insurance"
+                ],
+                "summary": "Create the insurance for a product",
+                "operationId": "e887c6f6daad2502cddb58f520df1280",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "product_id",
+                                    "content",
+                                    "start_date",
+                                    "expired_date"
+                                ],
+                                "properties": {
+                                    "product_id": {
+                                        "type": "number",
+                                        "example": "4"
+                                    },
+                                    "content": {
+                                        "type": "string",
+                                        "example": "Trong tuần đầu tiên, bạn có thể đổi một sản phẩm bất kỳ có giá tiền bằng hoặc hơn sản phẩm đã mua "
+                                    },
+                                    "start_date": {
+                                        "type": "date",
+                                        "example": "2022-01-01"
+                                    },
+                                    "expired_date": {
+                                        "type": "date",
+                                        "example": "2022-01-08"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "Success": {
+                                            "type": "string",
+                                            "example": "Create the insurance for product successfully"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "API key is missing."
+                    }
+                }
+            }
+        },
+        "/product/{id}/insurance": {
+            "get": {
+                "tags": [
+                    "Insurance"
+                ],
+                "summary": "Get the insurance of product has id = $id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "insurances": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number",
+                                                        "example": 1
+                                                    },
+                                                    "product_id": {
+                                                        "type": "number",
+                                                        "example": 1
+                                                    },
+                                                    "content": {
+                                                        "type": "number",
+                                                        "example": "Bảo hành một đổi một trong vòng 1 tháng đầu sử dụng"
+                                                    },
+                                                    "start_date": {
+                                                        "type": "date",
+                                                        "example": "2022-01-01"
+                                                    },
+                                                    "expired_date": {
+                                                        "type": "date",
+                                                        "example": "2022-02-01"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "timestamp",
+                                                        "example": "2022-01-20T09:06:33.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "timestamp",
+                                                        "example": "2022-01-20T09:06:33.000000Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "API key is missing."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Insurance"
+                ],
+                "summary": "Delete the insurance",
+                "description": "Delete the insurance by product_id",
+                "operationId": "0fadde1271ad73a6801a2858b1235ef6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete the insurance successfully"
+                    },
+                    "403": {
+                        "description": "API key is missing."
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "responses": {
+            "403": {
+                "description": "API key is missing."
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
