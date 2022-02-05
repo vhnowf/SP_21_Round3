@@ -1,8 +1,7 @@
 <?php
 
 
-namespace App\Https\Controllers\Feedback;
-
+namespace App\Http\Controllers\Feedback;
 
 interface FeedbackRepositoryInterface
 {
@@ -24,7 +23,7 @@ interface FeedbackRepositoryInterface
      * @param array $attributes
      */
 
-    public function create(Request $request);
+    public function create($formData);
 
     /**
      * Delete

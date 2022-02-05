@@ -42,7 +42,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('/security', 'SecurityController@index')->name('security');
     Route::get('/service', 'ServiceController@index')->name('service');
     Route::get('/feedback', [FeedbackController::class,'show'])->name('feedback');
-    Route::post('/feedback-store', 'Feedback\FeedbackController@store')->name('feedback.store');
+    Route::post('/feedback-store', [FeedbackController::class, 'store'])->name('feedback.store');
 });
 
 
