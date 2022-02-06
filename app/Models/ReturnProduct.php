@@ -14,6 +14,8 @@ class ReturnProduct extends Model implements HasMedia
 
     public $table = 'product_return';
 
+    protected $fillable = ['name','email','phone','order_id','product_name','product_code','reason','product_quantity','other_details'];
+
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')->fit('crop', 50, 50);

@@ -118,8 +118,7 @@ class FeedbackController extends Controller
      */ 
    public function show($id)
     {
-      $feedback = Feedback::where('id', $id)->get();  
-    //  dd($feedback);
+      $feedback = Feedback::where('id', $id)->get();
       if( $feedback == null ) {
         return response()->json([
           'success' => false,
@@ -147,13 +146,6 @@ class FeedbackController extends Controller
         'msg' => 'Delete successfully'
       ],200);
     }
-
-  //  public function massDestroy(MassDestroyCouponRequest $request)
- //   {
-    //    Coupon::whereIn('id', request('ids'))->delete();
-
-  //      return response(null, Response::HTTP_NO_CONTENT);
-  //  }
 
 
 }

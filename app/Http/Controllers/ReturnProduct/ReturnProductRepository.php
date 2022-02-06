@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Feedback;
+namespace App\Http\Controllers\ReturnProduct;
 
-use App\Http\Controllers\Feedback\FeedbackRepositoryInterface;
-use App\Models\Feedback;
+use App\Http\Controllers\ReturnProduct\ReturnProductRepositoryInterface;
+use App\Models\ReturnProduct;
 use Carbon\Carbon;
 
-class FeedbackRepository implements FeedbackRepositoryInterface
+class ReturnProductRepository implements ReturnProductRepositoryInterface
 {
     
-    public function __construct(Feedback $feedback)
+    public function __construct(ReturnProduct $returnproduct)
     {
-        $this->feedback = $feedback;
+        $this->returnproduct = $returnproduct;
     }
 
     /**
@@ -19,7 +19,7 @@ class FeedbackRepository implements FeedbackRepositoryInterface
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function getAll(){
-        return $this->feedback->all();
+        return $this->returnproduct->all();
     }
     
     /**
@@ -28,7 +28,7 @@ class FeedbackRepository implements FeedbackRepositoryInterface
      * @return mixed
      */
     public function find($id){
-        return $this->feedback->find($id);
+        return $this->returnproduct->find($id);
     }
 
     /**
@@ -39,8 +39,9 @@ class FeedbackRepository implements FeedbackRepositoryInterface
 
     public function create($formData)
     {
-      //  dd($formData);
-        $this->feedback = Feedback::create($formData);
+     //   dd($formData);
+        $this->returnproduct = ReturnProduct::create($formData);
+      
     }
 
     /**

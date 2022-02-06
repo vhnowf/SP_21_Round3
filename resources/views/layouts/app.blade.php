@@ -97,7 +97,7 @@
                         <span class="tooltip">Dashboard</span>
                     </li>
                     <li>
-                    <a href="">
+                    <a href="{{ route("returnproduct.index") }}">
                         <i class='bx bx-user' ></i>
                         <span class="links_name">Đổi Trả</span>
                     </a>

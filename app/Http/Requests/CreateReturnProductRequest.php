@@ -2,16 +2,13 @@
 
 namespace App\Http\Requests;
 
-use App\Models\ReturnProduct;
-use Gate;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Response;
 
-class StoreReturnProductRequest extends FormRequest
+class CreateReturnProductRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('returnproduct_create');
+        return true;
     }
 
     public function rules()
@@ -46,8 +43,10 @@ class StoreReturnProductRequest extends FormRequest
                 'required',
             ],
             'reason'               => [
-                'string',
-                'required',
+                'string'
+            ],
+            'other_details'               => [
+                'string'
             ],
            
         ];

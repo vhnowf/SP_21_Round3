@@ -22,7 +22,7 @@ class CreateProductReturnTable extends Migration
             $table->string('product_name');
             $table->string('product_code');
             $table->unsignedInteger('product_quantity');
-            $table->string('reason');
+            $table->string('reason')->nullable();
             $table->text('other_details');
             $table->timestamps();
         });

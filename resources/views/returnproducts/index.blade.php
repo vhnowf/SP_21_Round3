@@ -3,12 +3,13 @@
     <div class="card card-4">
       <div class="card-body">
           <h2 class="title">Product Return</h2>
-          <form method="POST" action="{{route("return.store")}}" enctype="multipart/form-data">
-            <h4 style="margin-bottom: 20px">1. Order information</h4>
+          <form method="POST" action="{{ route('returnproduct.store') }}" enctype="multipart/form-data">
+          @csrf
+            <h4 style="margin-bottom: 20px">1. Thông tin đơn hàng</h4>
               <div class="row row-space">
                   <div class="col-md-6 col-xs-12">
                       <div class="input-group">
-                          <label class="label">Name</label>
+                          <label class="label">Họ và tên</label>
                           <input class="input--style-4" type="text" name="name">
                       </div>
                   </div>
@@ -16,13 +17,13 @@
               <div class="row row-space">
                 <div class="col-md-6 col-xs-12">
                     <div class="input-group">
-                        <label class="label">E-Mail</label>
+                        <label class="label">E-mail</label>
                         <input class="input--style-4" type="email" name="email">
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <div class="input-group">
-                        <label class="label">Phone number</label>
+                        <label class="label">Số điện thoại</label>
                         <input class="input--style-4" type="tel" name="phone">
                     </div>
                 </div>
@@ -30,24 +31,24 @@
               <div class="row row-space">
                   <div class="col-md-6 col-xs-3">
                     <div class="input-group">
-                        <label class="label">Order ID</label>
+                        <label class="label">Mã đơn hàng</label>
                         <div class="input-group">
                             <input class="input--style-4" type="text" name="order_id">
                         </div>
                     </div>
                   </div>
               </div>
-            <h4 style="margin-bottom: 20px">2. Product information</h4>
+            <h4 style="margin-bottom: 20px">2. Thông tin sản phẩm</h4>
             <div class="row row-space">
               <div class="col-md-6 col-xs-12">
                   <div class="input-group">
-                      <label class="label">Product name</label>
+                      <label class="label">Tên sản phẩm</label>
                       <input class="input--style-4" type="text" name="product_name">
                   </div>
               </div>
               <div class="col-md-6 col-xs-12">
                   <div class="input-group">
-                      <label class="label">Product code</label>
+                      <label class="label">Mã sản phẩm</label>
                       <input class="input--style-4" type="text" name="product_code">
                   </div>
               </div>
@@ -55,8 +56,8 @@
             <div class="row">
               <div class="col-4">
                   <div class="input-group">
-                      <label class="label">Quantity</label>
-                      <input class="input--style-4" type="number" name="quantity">
+                      <label class="label">Số lượng</label>
+                      <input class="input--style-4" type="number" name="product_quantity">
                   </div>
               </div>
             </div>
@@ -73,39 +74,36 @@
                 <span class="help-block">{{ trans('cruds.return.fields.photo_helper') }}</span>
                 </div>
             </div> 
-            <h5 style="margin-bottom: 20px; font-size: 16px">Reasons of Return</h5>
-            <div style="margin-left : 40px" class="row">
+            <h5 style="margin-top: 10px; margin-bottom: 20px; font-size: 16px">Lí do trả hàng</h5>
+            <div style="margin-left : 5px" class="row">
             <div class="col-12"> 
-              <input id="option-one" name="radio" value="Dead On Arrival" checked="checked" type="radio"> 
+              <input id="option-one" name="reason" value="Hàng nhận được bị thiếu/sai/bể vỡ/không hoạt động/khác mô tả/đã qua sử dụng/giả nhái" checked="checked" type="radio"> 
               <label for="option-one"> 
-                <span></span> Dead On Arrival
+                <span></span>Hàng nhận được bị thiếu/sai/bể vỡ/không hoạt động
+                <br>
+                /khác mô tả/đã qua sử dụng/giả nhái
               </label> 
             </div> 
             <div class="col-12"> 
-              <input id="option-two" name="radio" value="Faulty, please supply details" type="radio"> 
-              <label for="option-two"> <span></span> Faulty, please supply details
+              <input id="option-two" name="reason" value="Chưa nhận được hàng nhưng Shipper đã cập nhật giao hàng thành công" type="radio"> 
+              <label for="option-two"> <span></span> Chưa nhận được hàng nhưng Shipper đã cập nhật giao hàng <br> thành công
               </label> 
             </div>
             <div class="col-12"> 
-              <input id="option-three" name="radio" value="Order error" type="radio"> 
-              <label for="option-three"> <span></span> Order error
+              <input id="option-three" name="reason" value="Chưa nhận được hàng sau thời gian giao hàng dự kiến" type="radio"> 
+              <label for="option-three"> <span></span> Chưa nhận được hàng sau thời gian giao hàng dự kiến
               </label> 
             </div>
             <div class="col-12"> 
-              <input id="option-four" name="radio" value="Others, please supply details" type="radio"> 
-              <label for="option-four"> <span></span> Others, please supply details
-              </label> 
-            </div>
-            <div class="col-12"> 
-              <input id="option-five" name="radio" value="Received wrong Item" type="radio"> 
-              <label for="option-five"> <span></span> Received wrong item
+              <input id="option-three" name="reason" value="Lí do khác" type="radio"> 
+              <label for="option-three"> <span></span> Lí do khác
               </label> 
             </div>
           </div>
           <div class="row form-group">
             <div class="col-12">
-              <label style="font-size:16px; margin:30px 0 20px 0" for="exampleFormControlTextarea1">Faulty or other details</label>
-              <textarea placeholder="Faulty or other details" class="form-control col-12" id="exampleFormControlTextarea1" rows="4"></textarea>
+              <label style="font-size:16px; margin:30px 0 20px 0" for="exampleFormControlTextarea1">Chi tiết lí do khác</label>
+              <textarea name="other_details" placeholder="Faulty or other details" class="form-control col-12" id="exampleFormControlTextarea1" rows="4"></textarea>
             </div>
           </div>
               <div style=" margin-top: 20px;"
@@ -120,7 +118,7 @@
 @section('scripts')
 <script>
     Dropzone.options.photoDropzone = {
-    url: '{{ route('return.storeMedia') }}',
+    url: '{{ route('returnproduct.storeMedia') }}',
     maxFilesize: 5, // MB
     acceptedFiles: '.jpeg,.jpg,.png,.gif',
     maxFiles: 1,

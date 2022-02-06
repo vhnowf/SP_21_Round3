@@ -15,7 +15,7 @@ use App\Http\Controllers\Api\FeedbackController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-/*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
@@ -29,4 +29,3 @@ Route::delete('/comment/{id}', 'CommentController@destroy');
 Route::post('insurance','Api\InsuranceController@store');
 Route::get('feedbacks', 'Api\Admin\FeedbackController@index');
 Route::get('feedbacks/{id}', 'Api\Admin\FeedbackController@show');
-*/

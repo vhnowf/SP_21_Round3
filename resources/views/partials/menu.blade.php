@@ -31,27 +31,14 @@
                     {{ trans('cruds.inbox.title') }}
                 </a>
         </li>
-        @can('purchase_access')
-            <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.purchases.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/purchases") || request()->is("admin/purchases/*") ? "c-active" : "" }}">
-                    <i class="fa-fw fas fa-shopping-bag c-sidebar-nav-icon">
+        <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.returnproducts.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/coupons") || request()->is("admin/coupons/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-tags c-sidebar-nav-icon">
 
                     </i>
-                    {{ trans('cruds.purchase.title') }}
+                    {{ trans('cruds.return.title') }}
                 </a>
-            </li>
-        @endcan
-        @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
-            @can('profile_password_edit')
-                <li class="c-sidebar-nav-item">
-                    <a class="c-sidebar-nav-link {{ request()->is('profile/password') || request()->is('profile/password/*') ? 'c-active' : '' }}" href="{{ route('profile.password.edit') }}">
-                        <i class="fa-fw fas fa-key c-sidebar-nav-icon">
-                        </i>
-                        {{ trans('global.change_password') }}
-                    </a>
-                </li>
-            @endcan
-        @endif
+        </li>
         <li class="c-sidebar-nav-item">
             <a href="#" class="c-sidebar-nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                 <i class="c-sidebar-nav-icon fas fa-fw fa-sign-out-alt">
