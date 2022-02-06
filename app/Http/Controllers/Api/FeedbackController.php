@@ -5,6 +5,7 @@ use App\Models\Feedback;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class FeedbackController extends Controller
 {
@@ -63,6 +64,7 @@ class FeedbackController extends Controller
      */
     public function store(Request $request) {
         $input = $request->all();
+        $request['id'] = DB::table('feedbacks')->max('id')+1;
         $feedback = Feedback::create($request->all());
 
        // return response()->json($feedback);

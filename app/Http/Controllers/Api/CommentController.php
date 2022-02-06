@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class CommentController extends Controller
 {
@@ -63,6 +64,7 @@ class CommentController extends Controller
      */
     public function create(Request $request)
     {
+        $request['id'] = DB::table('comments')->max('id')+1;
         $comment = $this->comment->createComment($request->all());
 
         return response()->json([

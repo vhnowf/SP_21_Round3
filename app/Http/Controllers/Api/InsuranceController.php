@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Models\Insurance;
+use Illuminate\Support\Facades\DB;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -50,6 +51,7 @@ class InsuranceController extends Controller
      */
     public function store(Request $request)
     {
+        $request['id'] = DB::table('insurances')->max('id')+1;
         $insurance = Insurance::create($request->all());
 
         return response()->json([

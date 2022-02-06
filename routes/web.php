@@ -67,8 +67,21 @@ Route::group(['middleware' => 'auth'], function (){
     Route::post('/returnproduct-store', [ReturnProductController::class, 'store'])->name('returnproduct.store');
     Route::post('/returnproduct/storeMedia', [ReturnProductController::class, 'storeMedia'])->name('returnproduct.storeMedia');
 
-    Route::post('/feedback-store', 'Feedback\FeedbackController@store')->name('feedback.store');
-
 });
+Route::get('feedbacks', [App\Http\Controllers\Api\Admin\FeedbackController::class,'index']);
+Route::get('feedbacks/{id}', [App\Http\Controllers\Api\Admin\FeedbackController::class,'show']);
+Route::post('feedback', [App\Http\Controllers\Api\FeedbackController::class,'store']);
+Route::delete('feedbacks/{id}',[App\Http\Controllers\Api\Admin\FeedbackController::class,'destroy']);
+
+Route::group(['prefix'=>'product/{id}'],function(){
+    Route::get('/comment','Api\CommentController@show');
+    Route::post('/comment','Api\CommentController@create');
+    Route::get('/insurance','Api\InsuranceController@show');
+  
+    Route::delete('/insurance','Api\InsuranceController@delete');
+});
+
+Route::post('/insurance','Api\InsuranceController@store');
+Route::delete('/comment/{id}','Api\CommentController@destroy');
 
 
