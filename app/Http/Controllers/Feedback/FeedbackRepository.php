@@ -40,12 +40,7 @@ class FeedbackRepository implements FeedbackRepositoryInterface
 
     public function create(Request $request)
     {
-<<<<<<< HEAD
-      //  dd($formData);
         $this->feedback = Feedback::create($formData);
-=======
-        $this->feedback = Feedback::create($request->all());
->>>>>>> ecb3444708ef4fe62338e2130acbff17510f9f95
     }
 
     /**
