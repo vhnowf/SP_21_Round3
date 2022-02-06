@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Feedback;
 
-use App\Http\Controllers\Feedback\FeedbackRepositoryInterface;
+use App\Http\Controllers\FeedbackRepositoryInterface;
 use App\Models\Feedback;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class FeedbackRepository implements FeedbackRepositoryInterface
 {
@@ -37,10 +38,14 @@ class FeedbackRepository implements FeedbackRepositoryInterface
      * @return mixed
      */
 
-    public function create($formData)
+    public function create(Request $request)
     {
+<<<<<<< HEAD
       //  dd($formData);
         $this->feedback = Feedback::create($formData);
+=======
+        $this->feedback = Feedback::create($request->all());
+>>>>>>> ecb3444708ef4fe62338e2130acbff17510f9f95
     }
 
     /**

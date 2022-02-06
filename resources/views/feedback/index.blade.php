@@ -6,7 +6,7 @@
             <div class="form-group row">
                 <label class="col-3">Nội dung</label>
                 <div class="col-9">
-                    <textarea rows="5" cols="40" class="form-control" name="content"></textarea>
+                    <textarea rows="5" cols="40" class="form-control" name="message"></textarea>
                 </div>
                 <span class="error-message">{{ $errors->first('message') }}</span>
             </div>

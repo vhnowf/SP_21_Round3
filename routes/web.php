@@ -66,7 +66,8 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('/returnproduct', [ReturnProductController::class,'index'])->name('returnproduct.index');
     Route::post('/returnproduct-store', [ReturnProductController::class, 'store'])->name('returnproduct.store');
     Route::post('/returnproduct/storeMedia', [ReturnProductController::class, 'storeMedia'])->name('returnproduct.storeMedia');
-    
+
+    Route::post('/feedback-store', 'Feedback\FeedbackController@store')->name('feedback.store');
 
 });
 
