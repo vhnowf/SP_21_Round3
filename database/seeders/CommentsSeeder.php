@@ -19,7 +19,7 @@ class CommentsSeeder extends Seeder
             [
                 'id' => 1,
                 'product_id' => 1,
-                'user_id' => 1,
+                'user_id' => 2,
                 'comment' => 'Sản phẩm này còn màu đỏ không ạ?',
                 'photo' => "null"
             ],
@@ -33,7 +33,7 @@ class CommentsSeeder extends Seeder
             [
                 'id' => 3,
                 'product_id' => 1,
-                'user_id' => 1,
+                'user_id' => 3,
                 'comment' => 'Chất lượng đảm bảo, giá phù hợp',
                 'photo' => "null"
             ],

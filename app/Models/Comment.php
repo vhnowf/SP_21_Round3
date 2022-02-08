@@ -16,7 +16,7 @@ class Comment extends Model
       return $this->belongsTo('App\Models\User');
     }
 
-    protected $fillable = ['id','product_id','user_id','photo'];
+    protected $fillable = ['id','product_id','comment','user_id','photo'];
 
     public function createComment(array $attributes){
       $comment = new self();

@@ -1,9 +1,10 @@
 <?php
 
 
-namespace App\Http\Controllers\ReturnProduct;
+namespace App\Contracts;
 
-interface ReturnProductRepositoryInterface
+
+interface FeedbackRepositoryInterface
 {
     /**
      * Get all

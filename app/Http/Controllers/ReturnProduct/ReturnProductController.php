@@ -5,8 +5,9 @@ namespace App\Http\Controllers\ReturnProduct;
 use App\Http\Requests\CreateReturnProductRequest;
 use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Models\ReturnProduct;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\ReturnProduct\ReturnProductRepository;
+use App\Repository\ReturnProductRepository;
 
 class ReturnProductController extends Controller
 {
@@ -18,7 +19,7 @@ class ReturnProductController extends Controller
         return view('returnproducts.index', compact('returnproducts'));
     }
 
-    public function store(CreateReturnProductRequest $request, ReturnProductRepository $returnProductRepository)
+    public function store(Request $request, ReturnProductRepository $returnProductRepository)
     {
        $formData['name'] = $request->name;
        $formData['email'] = $request->email;

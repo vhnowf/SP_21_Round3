@@ -5,7 +5,7 @@ use App\Models\Feedback;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateFeedbackRequest;
-use App\Http\Controllers\FeedbackRepository;
+use App\Repository\FeedbackRepository;
 
 class FeedbackController extends Controller
 {
@@ -13,18 +13,14 @@ class FeedbackController extends Controller
         return view('feedback.index');
     }
       
-    /**
-     * @param  CreateFeedbackRequest  $request
-     * @param  FeedbackRepository  $feedbackRepository
-     * @return RedirectResponse
-     */
-    public function store(CreateFeedbackRequest $request, FeedbackRepository $feedbackRepository)
+    public function store(Request $request, FeedbackRepository $feedbackRepository)
     {
-        dd($request->all()); 
-        $formData['content'] = $request->content;
+       // dd($request->all()); 
+        $formData['content'] = $request->message;
         $formData['user_id']  = auth()->user()->id;  
         $feedbackRepository->create($formData);
-        //return $request->all();
+        return redirect()->route('feedback')->with('success','Send a feedback
+        successfully');
     }
 
 }

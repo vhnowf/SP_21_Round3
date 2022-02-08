@@ -15,7 +15,12 @@ class CreateTableInsurancesTable extends Migration
     {
         Schema::create('insurances', function (Blueprint $table) {
             $table->id();
+            $table->string('code');
             $table->integer('product_id');
+            $table->string('product_name');
+            $table->string('user_name');
+            $table->string('phone');
+            $table->date("buy_date");
             $table->string('content');
             $table->date("start_date");
             $table->date("expired_date");

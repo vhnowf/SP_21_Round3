@@ -1,10 +1,9 @@
 <?php
 
 
-namespace App\Https\Controllers\Feedback;
+namespace App\Contracts;
 
-
-interface FeedbackRepositoryInterface
+interface ReturnProductRepositoryInterface
 {
     /**
      * Get all
@@ -24,7 +23,7 @@ interface FeedbackRepositoryInterface
      * @param array $attributes
      */
 
-    public function create(Request $request);
+    public function create($formData);
 
     /**
      * Delete

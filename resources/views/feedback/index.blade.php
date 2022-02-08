@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('content')
     <div class="col-6 m-auto">
+            @if($message = Session::get('success'))
+                           <div class="alert alert-success">
+                             <p>{{$message}}</p>
+                          </div>
+            @endif
         <form  method="post" class="p-3 border border-primary" action="{{ route('feedback.store') }}"> 
             @csrf
             <div class="form-group row">

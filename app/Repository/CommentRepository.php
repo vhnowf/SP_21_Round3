@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\ReturnProduct;
+namespace App\Repository;
 
-use App\Http\Controllers\ReturnProduct\ReturnProductRepositoryInterface;
-use App\Models\ReturnProduct;
+use App\Contracts\CommentRepositoryInterface;
+use App\Models\Comment;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
-class ReturnProductRepository implements ReturnProductRepositoryInterface
+class CommentRepository implements CommentRepositoryInterface
 {
     
-    public function __construct(ReturnProduct $returnproduct)
+    public function __construct(Comment $comment)
     {
-        $this->returnproduct = $returnproduct;
+        $this->comment = $comment;
     }
 
     /**
@@ -19,16 +20,16 @@ class ReturnProductRepository implements ReturnProductRepositoryInterface
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function getAll(){
-        return $this->returnproduct->all();
+        return $this->comment->all();
     }
     
     /**
-     * Find a feedback
+     * Find a comment
      * @param $id
      * @return mixed
      */
     public function find($id){
-        return $this->returnproduct->find($id);
+        return $this->comment->find($id);
     }
 
     /**
@@ -39,9 +40,7 @@ class ReturnProductRepository implements ReturnProductRepositoryInterface
 
     public function create($formData)
     {
-     //   dd($formData);
-        $this->returnproduct = ReturnProduct::create($formData);
-      
+        $this->comment = Comment::create($formData);
     }
 
     /**

@@ -11,5 +11,5 @@ class Insurance extends Model
 
     protected $table = 'insurances';
 
-    protected $fillable = ['id','product_id','content','start_date', 'expired_date'];
+    protected $fillable = ['id','product_id','content','code','product_name','user_name','buy_date','start_date', 'expired_date'];
 }

@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '8a420793bf98cb5ae981ededbb7a8502ce13219c',
+        'reference' => '7ce838cfbd55aeb3875c1f4676ee0e8bac2569e1',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -449,12 +449,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '8a420793bf98cb5ae981ededbb7a8502ce13219c',
+            'reference' => '7ce838cfbd55aeb3875c1f4676ee0e8bac2569e1',
             'dev_requirement' => false,
         ),
         'laravel/serializable-closure' => array(
