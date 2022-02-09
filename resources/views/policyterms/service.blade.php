@@ -1,20 +1,18 @@
 @extends('layouts.app')
 
-@section('service-content')
-<div id="title">ĐIỀU KHOẢN DỊCH VỤ</div>
-  <p>
-    <br>
-  </p>
-  <p>
-    <br>
-  </p>
-  <p class="MsoNormal">
-    <b><span style="color:#000000;">
-    1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  GIỚI THIỆU</span></b> 
-  </p>
-  <p class="MsoNormal" style="margin-left:.5in;text-align:justify;text-indent:-.5in">
-    <span style="color:black;">
+@section('content')
+
+<div class="container content">
+    <div id="title" style="text-align: center; font-size: 28px; margin: 20px 0 30px 0;">ĐIỀU KHOẢN DỊCH VỤ</div>
+    <h1  style="text-align:center;margin-left:0in;"></h1>
+    <p>
+      <span style="font-size:10px;">
+      </span>
+    </p>
+    <p class="MsoNormal" style="text-align:justify;">
+      <b>1.GIỚI THIỆU</b>
+    </p>
+    <p class="MsoNormal" style="text-align:justify;">
     1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
     Chào mừng bạn đến với sàn giao dịch thương mại điện tử qua giao diện website hoặc ứng
     dụng di động. Trước khi sử dụng Trang Shopee hoặc tạo tài khoản (“Tài Khoản”), vui lòng đọc kỹ các
@@ -23,42 +21,35 @@
     Quy Chế Hoạt Động Sàn Giao Dịch Thương Mại Điện Tử</span></b><span style="color:#000000">
     &nbsp;để hiểu rõ quyền lợi và nghĩa vụ hợp pháp của mình đối với Công ty TNHH XYZ và các công ty liên kết và công ty con của XYZ (sau đây
     được gọi riêng là “XYZ”, gọi chung là “chúng tôi”, “của chúng tôi”).</span> 
-  </p>
-  <p class="MsoNormal" style="margin-left:.5in;text-align:justify;text-indent:-.5in;">
-    <span style="color:#000000;">
+    </p>
+    <p class="MsoNormal" style="text-align:justify;">
     1.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
     Dịch Vụ bao gồm dịch vụ sàn giao dịch trực tuyến kết nối người tiêu dùng với nhau nhằm mang
     đến cơ hội kinh doanh giữa người mua (“Người Mua”) và người bán (“Người Bán”)
     (gọi chung là “bạn”, “Người Sử Dụng” hoặc “Các Bên”).
-    </span> 
-  </p>
-  <p class="MsoNormal" style="margin-left:.5in;text-align:justify;text-indent:-.5in;background:white;">
-    <span style="color:#000000;">
+    </p>
+    <p class="MsoNormal" style="text-align:justify;">
     1.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Trước khi trở thành Người Sử Dụng của Trang Web, bạn cần đọc và chấp nhận mọi điều khoản
     và điều kiện được quy định trong, và dẫn chiếu đến, Điều Khoản Dịch Vụ này và
     Chính Sách Bảo Mật được dẫn chiếu theo đây.</span> 
-  </p>
-  <p class="MsoNormal" style="margin-left:.5in;text-align:justify;text-indent:-.5in;background:white;">
-    <span style="color:#000000;">
+    </p>
+    <p class="MsoNormal" style="text-align:justify;">
     1.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
     Công ty bảo lưu quyền thay đổi, chỉnh sửa, tạm ngưng hoặc chấm dứt tất cả hoặc bất kỳ phần
     nào của Trang Web hoặc Dịch Vụ vào bất cứ thời điểm nào theo qui định pháp
     luật. Phiên Bản thử nghiệm của Dịch Vụ hoặc tính năng của Dịch Vụ có thể không
     hoàn toàn giống với phiên bản cuối cùng.</span> 
-  </p>
-  <p class="MsoNormal" style="margin-left:.5in;text-align:justify;text-indent:-.5in;background:white;">
-    <span style="color:#000000;">
+    </p>
+    <p class="MsoNormal" style="text-align:justify;">
     1.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Website bảo lưu quyền từ chối yêu cầu mở Tài Khoản hoặc các truy cập của bạn tới Trang
      Web hoặc Dịch Vụ theo quy định pháp luật và Điều khoản dịch vụ.</span> 
-  </p>
-  <p class="MsoNormal" style="text-align:justify;background:white;">
-    <span style="color:#000000;">BẰNG VIỆC SỬ DỤNG DỊCH VỤ HAY TẠO TÀI
-  KHOẢN TẠI WEBSITE, BẠN ĐÃ CHẤP NHẬN VÀ ĐỒNG Ý VỚI NHỮNG ĐIỀU KHOẢN DỊCH VỤ NÀY
-  VÀ CHÍNH SÁCH BỔ SUNG ĐƯỢC DẪN CHIẾU THEO ĐÂY.</span> 
     </p>
-  <p class="MsoNormal" style="text-align:justify;background:white;">
+    <p class="MsoNormal" style="text-align:justify;background:white;">
     <b><span style="color:#000000;">&nbsp;</span></b> 
   </p>
+    <p class="MsoNormal" style="text-align:justify;">
+      <b>2.</b>&nbsp;<b>KHI NÀO CÔNG TY SẼ THU THẬP DỮ LIỆU CÁ NHÂN?</b>
+   
   <p class="MsoNormal" style="text-align:justify;background:white;">
     <b><span style="color:#000000;">2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   QUYỀN RIÊNG TƯ</span></b> 
@@ -126,5 +117,12 @@
   của Người Sử Dụng không được hiểu là bất kỳ việc xác nhận hoặc liên quan nào
   đến công ty.</span> 
     </p>
-</div>
+   
+
+    <p class="MsoNormal" style="text-align:justify;">
+      <b></b>
+    </p>
+</div>           
+
+
 @endsection

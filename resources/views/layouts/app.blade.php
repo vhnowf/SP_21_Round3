@@ -23,7 +23,7 @@
         <div id="app">
         <nav class="contain navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a href="{{ route('home') }}>
+                <a href="{{ route('home') }}">
                     <img src={{ URL::asset('svg/logo.svg') }} alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

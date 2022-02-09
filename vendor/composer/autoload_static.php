@@ -675,6 +675,7 @@ class ComposerStaticInit3f42bad4a6fe07a9fb4fb234d56cc7f1
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\Inbox\\InboxController' => __DIR__ . '/../..' . '/app/Http/Controllers/Inbox/InboxController.php',
         'App\\Http\\Controllers\\Insurance\\InsuranceController' => __DIR__ . '/../..' . '/app/Http/Controllers/Insurance/InsuranceController.php',
+        'App\\Http\\Controllers\\QuestionController' => __DIR__ . '/../..' . '/app/Http/Controllers/QuestionController.php',
         'App\\Http\\Controllers\\ReturnProduct\\ReturnProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReturnProduct/ReturnProductController.php',
         'App\\Http\\Controllers\\SecurityController' => __DIR__ . '/../..' . '/app/Http/Controllers/SecurityController.php',
         'App\\Http\\Controllers\\ServiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/ServiceController.php',

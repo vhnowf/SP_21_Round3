@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('security-content')
+@section('content')
 <div class="container content">
     <div id="title" style="text-align: center; font-size: 28px; margin: 20px 0 30px 0;">CHÍNH SÁCH BẢO MẬT</div>
     <h1  style="text-align:center;margin-left:0in;"></h1>

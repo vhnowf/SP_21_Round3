@@ -5,6 +5,7 @@ use App\Http\Controllers\Feedback\FeedbackController;
 use App\Http\Controllers\Inbox\InboxController;
 use App\Http\Controllers\ReturnProduct\ReturnProductController;
 use App\Http\Controllers\Comment\CommentController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\Insurance\InsuranceController;
 
 
@@ -80,7 +81,7 @@ Route::get('feedbacks', [App\Http\Controllers\Api\Admin\FeedbackController::clas
 Route::get('feedbacks/{id}', [App\Http\Controllers\Api\Admin\FeedbackController::class,'show']);
 Route::post('feedback', [App\Http\Controllers\Api\FeedbackController::class,'store']);
 Route::delete('feedbacks/{id}',[App\Http\Controllers\Api\Admin\FeedbackController::class,'destroy']);
-
+Route::get('/article/Theo-doi-tinh-trang-don-hang-1542942316341cks', [QuestionController::class,'first'])->name('question.first');
 Route::delete('/comment/{id}','Api\CommentController@destroy');
 
 Route::get('product/1',  [CommentController::class,'index'])->name('comment.index');

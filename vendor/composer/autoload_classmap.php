@@ -32,6 +32,7 @@ return array(
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\Inbox\\InboxController' => $baseDir . '/app/Http/Controllers/Inbox/InboxController.php',
     'App\\Http\\Controllers\\Insurance\\InsuranceController' => $baseDir . '/app/Http/Controllers/Insurance/InsuranceController.php',
+    'App\\Http\\Controllers\\QuestionController' => $baseDir . '/app/Http/Controllers/QuestionController.php',
     'App\\Http\\Controllers\\ReturnProduct\\ReturnProductController' => $baseDir . '/app/Http/Controllers/ReturnProduct/ReturnProductController.php',
     'App\\Http\\Controllers\\SecurityController' => $baseDir . '/app/Http/Controllers/SecurityController.php',
     'App\\Http\\Controllers\\ServiceController' => $baseDir . '/app/Http/Controllers/ServiceController.php',
