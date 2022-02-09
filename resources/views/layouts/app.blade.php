@@ -23,7 +23,7 @@
         <div id="app">
         <nav class="contain navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a href="#">
+                <a href="{{ route('home') }}>
                     <img src={{ URL::asset('svg/logo.svg') }} alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -98,7 +98,7 @@
                     </li>
                     <li>
                     <a href="{{ route("returnproduct.index") }}">
-                        <i class='bx bx-user' ></i>
+                        <i class='bx bxl-product-hunt' ></i>
                         <span class="links_name">Đổi Trả</span>
                     </a>
                     <span class="tooltip">Đổi Trả</span>
@@ -116,6 +116,20 @@
                         <span class="links_name">Feedback</span>
                     </a>
                     <span class="tooltip">Feedback</span>
+                    </li>
+                    <li>
+                    <a href="{{ route("comment.index") }}">
+                        <i class='bx bx-comment-detail' ></i>
+                        <span class="links_name">Comment</span>
+                    </a>
+                    <span class="tooltip">Comment</span>
+                    </li>
+                    <li>
+                    <a href="{{ route("insurance.index") }}">
+                        <i class='bx bx-bookmark-heart' ></i>
+                        <span class="links_name">Bảo hành </span>
+                    </a>
+                    <span class="tooltip">Bảo hành </span>
                     </li>
                     </ul>
                 </div>

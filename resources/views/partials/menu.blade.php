@@ -16,15 +16,15 @@
             </a>
         </li>
         <li class="c-sidebar-nav-item">
-            <a href="{{ route("admin.feedbacks.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/coupons") || request()->is("admin/coupons/*") ? "c-active" : "" }}">
+            <a href="{{ route("admin.feedbacks.index") }}" class="c-sidebar-nav-link">
                 <i class="fa-fw fas fa-tags c-sidebar-nav-icon">
 
-                </i>
+                </i><i class="fa-thin fa-house-person-return"></i>
                     {{ trans('cruds.feedback.title') }}
                 </a>
         </li>
         <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.inbox.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/coupons") || request()->is("admin/coupons/*") ? "c-active" : "" }}">
+                <a href="{{ route("admin.inbox.index") }}" class="c-sidebar-nav-link">
                     <i class="fa-fw fas fa-tags c-sidebar-nav-icon">
 
                     </i>
@@ -32,7 +32,15 @@
                 </a>
         </li>
         <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.returnproducts.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/coupons") || request()->is("admin/coupons/*") ? "c-active" : "" }}">
+                <a href="{{ route("admin.returnproducts.index") }}" class="c-sidebar-nav-link">
+                    <i class="fa-fw fas fa-tags c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.return.title') }}
+                </a>
+        </li>
+        <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.returnproducts.index") }}" class="c-sidebar-nav-link">
                     <i class="fa-fw fas fa-tags c-sidebar-nav-icon">
 
                     </i>
