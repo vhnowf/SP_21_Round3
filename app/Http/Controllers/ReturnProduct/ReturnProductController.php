@@ -39,6 +39,7 @@ class ReturnProductController extends Controller
          //   Media::whereIn('id', $media)->update(['model_id' => $returnproduct->id]);
         //}
         
-        return redirect()->route('home');
+        return redirect()->route('returnproduct.index')->with('success','Send a return product request
+        successfully');;
     }
 }

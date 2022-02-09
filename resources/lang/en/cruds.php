@@ -84,7 +84,7 @@ return [
         ],
     ],
     'return'         => [
-        'title'          => 'Đơn trả hàng ',
+        'title'          => 'Yêu cầu trả hàng ',
         'title_1'        => 'Order information',
         'title_2'        => 'Product information',
         'fields'         => [

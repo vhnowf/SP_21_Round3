@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('return-content')
     <div class="card card-4">
+    @if($message = Session::get('success'))
+                           <div class="alert alert-success">
+                             <p>{{$message}}</p>
+                          </div>
+            @endif
       <div class="card-body">
           <h2 class="title">Product Return</h2>
           <form method="POST" action="{{ route('returnproduct.store') }}" enctype="multipart/form-data">
@@ -64,13 +69,9 @@
            <div class="row">
               <div class="col-4">
                 <label for="photo">{{ trans('cruds.return.fields.photo') }}</label>
-                <div class="needsclick dropzone {{ $errors->has('photo') ? 'is-invalid' : '' }}" id="photo-dropzone">
-                </div>
-                @if($errors->has('photo'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('photo') }}
-                    </div>
-                @endif
+  
+                <input type="file" name="fileToUpload" id="fileToUpload">
+    
                 <span class="help-block">{{ trans('cruds.return.fields.photo_helper') }}</span>
                 </div>
             </div> 
